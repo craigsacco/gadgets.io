@@ -1,0 +1,20 @@
+# add boost
+add_subdirectory(Boost EXCLUDE_FROM_ALL)
+
+# move all 3rd-party targets into its own VS project folder
+macro(__process_all_3rdparty_targets __directory)
+	get_property(__subdirectories DIRECTORY ${__directory} PROPERTY SUBDIRECTORIES)
+    foreach(__subdirectory ${__subdirectories})
+        __process_all_3rdparty_targets(${__subdirectory})
+    endforeach()
+	unset(__subdirectory)
+	unset(__subdirectories)
+    get_property(__targets DIRECTORY ${__directory} PROPERTY BUILDSYSTEM_TARGETS)
+	foreach(__target ${__targets})
+		set_target_properties(${__target} PROPERTIES FOLDER "InterfaceIO/3rdParty")
+	endforeach()
+	unset(__target)
+	unset(__targets)
+endmacro()
+__process_all_3rdparty_targets(${CMAKE_CURRENT_SOURCE_DIR})
+unset(__process_all_3rdparty_targets)

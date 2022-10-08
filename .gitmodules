@@ -1,0 +1,3 @@
+[submodule "3rdParty/Boost"]
+	path = 3rdParty/Boost
+	url = https://github.com/boostorg/boost
