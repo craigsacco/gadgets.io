@@ -1,12 +1,14 @@
 #pragma once
 
+#include "ITaskQueue.h"
+
 #include <boost/asio/io_context.hpp>
 
 namespace InterfaceIO
 {
 	namespace Core
 	{
-		class TaskQueue
+		class TaskQueue : public virtual ITaskQueue
 		{
 		public:
 			explicit TaskQueue() = default;
@@ -18,7 +20,7 @@ namespace InterfaceIO
 			void Start();
 			void Stop();
 
-			void AddTask(std::function<void()> task);
+			void AddTask(std::function<void()> task) override;
 
 		protected:
 			void ThreadLoop();

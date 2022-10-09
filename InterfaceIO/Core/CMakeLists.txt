@@ -12,6 +12,13 @@ target_include_directories(InterfaceIO_Core
 )
 
 target_sources(InterfaceIO_Core
-	PUBLIC	Include/TaskQueue.h
+	PRIVATE	Include/AsyncCallback.h
+			Include/AsyncClassCallback.h
+			Include/Callback.h
+			Include/ClassCallback.h
+			Include/IAsyncCallback.h
+			Include/ICallback.h
+			Include/ITaskQueue.h
+			Include/TaskQueue.h
 			Source/TaskQueue.cpp
 )
