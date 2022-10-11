@@ -3,23 +3,21 @@
 #include "BaseDriver.h"
 #include "IDigitalInputDriver.h"
 
-namespace GadgetsIO
-{
-	namespace Devices
-	{
-		class BaseDigitalInputDriver : public BaseDriver, public virtual IDigitalInputDriver
-		{
-		public:
-			explicit BaseDigitalInputDriver(Core::ITaskQueueSPtr pTaskQueue);
-			~BaseDigitalInputDriver();
+namespace GadgetsIO {
+namespace Devices {
+class BaseDigitalInputDriver : public BaseDriver,
+                               public virtual IDigitalInputDriver {
+  public:
+    explicit BaseDigitalInputDriver( Core::ITaskQueueSPtr pTaskQueue );
+    ~BaseDigitalInputDriver();
 
-			void BeginGetState(StateCallbackSPtr pCallback) override;
+    void BeginGetState( StateCallbackSPtr pCallback ) override;
 
-		protected:
-			virtual void GetState() = 0;
+  protected:
+    virtual void GetState() = 0;
 
-		protected:
-			StateCallbackSPtr m_pGetStateCallback = nullptr;
-		};
-	}
-}
+  protected:
+    StateCallbackSPtr m_pGetStateCallback = nullptr;
+};
+} // namespace Devices
+} // namespace GadgetsIO

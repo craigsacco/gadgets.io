@@ -1,0 +1,15 @@
+---
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+BreakBeforeBraces: Stroustrup
+BreakConstructorInitializers: BeforeComma
+FixNamespaceComments: 'true'
+IndentWidth: '4'
+Language: Cpp
+SortIncludes: 'true'
+SpacesInParentheses: 'true'
+Standard: Cpp11
+TabWidth: '4'
+UseTab: Never
+
+...

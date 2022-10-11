@@ -3,28 +3,26 @@
 #include "BaseDevice.h"
 #include "IDigitalInput.h"
 
-namespace GadgetsIO
-{
-	namespace Devices
-	{
-		class IDigitalInputDriver;
-		using IDigitalInputDriverSPtr = std::shared_ptr<IDigitalInputDriver>;
+namespace GadgetsIO {
+namespace Devices {
+class IDigitalInputDriver;
+using IDigitalInputDriverSPtr = std::shared_ptr<IDigitalInputDriver>;
 
-		class DigitalInput : public BaseDevice, public virtual IDigitalInput
-		{
-		public:
-			DigitalInput(IDigitalInputDriverSPtr pDriver, Core::ITaskQueueSPtr pTaskQueue);
-			virtual ~DigitalInput();
+class DigitalInput : public BaseDevice, public virtual IDigitalInput {
+  public:
+    DigitalInput( IDigitalInputDriverSPtr pDriver,
+                  Core::ITaskQueueSPtr pTaskQueue );
+    virtual ~DigitalInput();
 
-			// overrides from IDigitalInput
-			bool GetState() override;
+    // overrides from IDigitalInput
+    bool GetState() override;
 
-		protected:
-			void GetStateCallback(bool state);
+  protected:
+    void GetStateCallback( bool state );
 
-		private:
-			IDigitalInputDriverSPtr m_pDigitalInputDriver;
-			bool m_state;
-		};
-	}
-}
+  private:
+    IDigitalInputDriverSPtr m_pDigitalInputDriver;
+    bool m_state;
+};
+} // namespace Devices
+} // namespace GadgetsIO
