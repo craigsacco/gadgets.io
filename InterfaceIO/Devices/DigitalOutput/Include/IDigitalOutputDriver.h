@@ -11,13 +11,10 @@ namespace InterfaceIO
 		public:
 			using StateCallbackSPtr = std::shared_ptr<Core::IAsyncCallback<bool>>;
 
-			IDigitalOutputDriver() = delete;
-			virtual ~IDigitalOutputDriver() = delete;
-
-			virtual void BeginOn(VoidCallbackSPtr callback) = 0;
-			virtual void BeginOff(VoidCallbackSPtr callback) = 0;
-			virtual void BeginToggle(VoidCallbackSPtr callback) = 0;
-			virtual void BeginGetState(StateCallbackSPtr callback) = 0;
+			virtual void BeginOn(VoidCallbackSPtr pCallback) = 0;
+			virtual void BeginOff(VoidCallbackSPtr pCallback) = 0;
+			virtual void BeginToggle(VoidCallbackSPtr pCallback) = 0;
+			virtual void BeginGetState(StateCallbackSPtr pCallback) = 0;
 		};
 	}
 }

@@ -13,8 +13,10 @@ target_include_directories(InterfaceIO_Devices_DigitalInput
 )
 
 target_sources(InterfaceIO_Devices_DigitalInput
-	PRIVATE	Include/DigitalInput.h
+	PRIVATE	Include/BaseDigitalInputDriver.h
+			Include/DigitalInput.h
 			Include/IDigitalInput.h
 			Include/IDigitalInputDriver.h
+			Source/BaseDigitalInputDriver.cpp
 			Source/DigitalInput.cpp
 )

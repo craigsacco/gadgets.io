@@ -13,7 +13,9 @@ target_include_directories(InterfaceIO_Devices_Core
 
 target_sources(InterfaceIO_Devices_Core
 	PRIVATE	Include/BaseDevice.h
+			Include/BaseDriver.h
 			Include/IDevice.h
 			Include/IDriver.h
 			Source/BaseDevice.cpp
+			Source/BaseDriver.cpp
 )

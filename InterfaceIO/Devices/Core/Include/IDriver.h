@@ -2,6 +2,8 @@
 
 #include "IAsyncCallback.h"
 
+#include <memory>
+
 namespace InterfaceIO
 {
 	namespace Devices
@@ -11,11 +13,8 @@ namespace InterfaceIO
 		public:
 			using VoidCallbackSPtr = std::shared_ptr<Core::IAsyncCallback<>>;
 
-			IDriver() = delete;
-			virtual ~IDriver() = delete;
-
-			virtual void BeginInitialise(VoidCallbackSPtr callback) = 0;
-			virtual void BeginShutdown(VoidCallbackSPtr callback) = 0;
+			virtual void BeginInitialise(VoidCallbackSPtr pCallback) = 0;
+			virtual void BeginShutdown(VoidCallbackSPtr pCallback) = 0;
 		};
 	}
 }

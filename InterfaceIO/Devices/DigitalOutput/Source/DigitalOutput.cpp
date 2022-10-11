@@ -21,7 +21,7 @@ namespace InterfaceIO
 			BeginAsyncOperation();
 
 			const auto pCallback = std::make_shared<Core::AsyncClassCallback<DigitalOutput>>(
-				GetCallbackDispatcher(), this, &DigitalOutput::GeneralCallback);
+				GetCallbackDispatcher(), this, &DigitalOutput::DefaultCallback);
 			m_pDigitalOutputDriver->BeginOn(pCallback);
 		}
 
@@ -30,7 +30,7 @@ namespace InterfaceIO
 			BeginAsyncOperation();
 
 			const auto pCallback = std::make_shared<Core::AsyncClassCallback<DigitalOutput>>(
-				GetCallbackDispatcher(), this, &DigitalOutput::GeneralCallback);
+				GetCallbackDispatcher(), this, &DigitalOutput::DefaultCallback);
 			m_pDigitalOutputDriver->BeginOff(pCallback);
 		}
 
@@ -39,11 +39,11 @@ namespace InterfaceIO
 			BeginAsyncOperation();
 
 			const auto pCallback = std::make_shared<Core::AsyncClassCallback<DigitalOutput>>(
-				GetCallbackDispatcher(), this, &DigitalOutput::GeneralCallback);
+				GetCallbackDispatcher(), this, &DigitalOutput::DefaultCallback);
 			m_pDigitalOutputDriver->BeginToggle(pCallback);
 		}
 
-		void DigitalOutput::GeneralCallback()
+		void DigitalOutput::DefaultCallback()
 		{
 			FinishAsyncOperation();
 		}

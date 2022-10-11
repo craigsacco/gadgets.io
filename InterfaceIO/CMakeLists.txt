@@ -15,3 +15,4 @@ add_subdirectory(../3rdParty 3rdParty)
 # add subdirectories to project scope
 add_subdirectory(Core)
 add_subdirectory(Devices)
+add_subdirectory(Backends)

@@ -13,8 +13,10 @@ target_include_directories(InterfaceIO_Devices_DigitalOutput
 )
 
 target_sources(InterfaceIO_Devices_DigitalOutput
-	PRIVATE	Include/DigitalOutput.h
+	PRIVATE	Include/BaseDigitalOutputDriver.h
+			Include/DigitalOutput.h
 			Include/IDigitalOutput.h
 			Include/IDigitalOutputDriver.h
+			Source/BaseDigitalOutputDriver.cpp
 			Source/DigitalOutput.cpp
 )

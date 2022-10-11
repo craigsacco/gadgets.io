@@ -1,0 +1,3 @@
+# add all subfolders
+add_subdirectory(EmulatedDigitalInputDriver)
+add_subdirectory(EmulatedDigitalOutputDriver)

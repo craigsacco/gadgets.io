@@ -23,7 +23,7 @@ namespace InterfaceIO
 			bool GetState() override;
 
 		protected:
-			void GeneralCallback();
+			void DefaultCallback();
 			void GetStateCallback(bool state);
 
 		private:

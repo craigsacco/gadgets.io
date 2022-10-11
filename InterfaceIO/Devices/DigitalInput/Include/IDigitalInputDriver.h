@@ -11,10 +11,7 @@ namespace InterfaceIO
 		public:
 			using StateCallbackSPtr = std::shared_ptr<Core::IAsyncCallback<bool>>;
 
-			IDigitalInputDriver() = delete;
-			virtual ~IDigitalInputDriver() = delete;
-
-			virtual void BeginGetState(StateCallbackSPtr callback) = 0;
+			virtual void BeginGetState(StateCallbackSPtr pCallback) = 0;
 		};
 	}
 }
