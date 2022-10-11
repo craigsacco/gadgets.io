@@ -1,0 +1,17 @@
+add_library(GadgetsIO_Backends_EmulatedDigitalInputDriver)
+add_library(GadgetsIO::Backends::EmulatedDigitalInputDriver ALIAS GadgetsIO_Backends_EmulatedDigitalInputDriver)
+
+set_target_properties(GadgetsIO_Backends_EmulatedDigitalInputDriver PROPERTIES FOLDER "GadgetsIO/Backends/Emulated")
+
+target_link_libraries(GadgetsIO_Backends_EmulatedDigitalInputDriver
+	PUBLIC	GadgetsIO::Devices::DigitalInput
+)
+
+target_include_directories(GadgetsIO_Backends_EmulatedDigitalInputDriver
+	PUBLIC	Include
+)
+
+target_sources(GadgetsIO_Backends_EmulatedDigitalInputDriver
+	PRIVATE	Include/EmulatedDigitalInputDriver.h
+			Source/EmulatedDigitalInputDriver.cpp
+)

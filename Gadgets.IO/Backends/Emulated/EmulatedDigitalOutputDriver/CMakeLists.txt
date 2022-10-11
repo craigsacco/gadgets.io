@@ -1,0 +1,17 @@
+add_library(GadgetsIO_Backends_EmulatedDigitalOutputDriver)
+add_library(GadgetsIO::Backends::EmulatedDigitalOutputDriver ALIAS GadgetsIO_Backends_EmulatedDigitalOutputDriver)
+
+set_target_properties(GadgetsIO_Backends_EmulatedDigitalOutputDriver PROPERTIES FOLDER "GadgetsIO/Backends/Emulated")
+
+target_link_libraries(GadgetsIO_Backends_EmulatedDigitalOutputDriver
+	PUBLIC	GadgetsIO::Devices::DigitalOutput
+)
+
+target_include_directories(GadgetsIO_Backends_EmulatedDigitalOutputDriver
+	PUBLIC	Include
+)
+
+target_sources(GadgetsIO_Backends_EmulatedDigitalOutputDriver
+	PRIVATE	Include/EmulatedDigitalOutputDriver.h
+			Source/EmulatedDigitalOutputDriver.cpp
+)
